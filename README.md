@@ -4,4 +4,4 @@ Dishack is software created by abgache using python in October 2024 to use token
 
 # IMPORTANT :
 This software can be detected as a virus by your anti-virus, if it blocks you, **deactivate it.**
-_Here is a tutorial for disabling the default Windows antivirus (Windows defender):_ [tutorial URL](https://www.youtube.com/watch?v=ke-UHDMMuAo&embeds_referring_euri=https%3A%2F%2Fabgache.pro%2F&source_ve_path=Mjg2NjY)
+_Here is a tutorial for disabling the default Windows antivirus (Windows defender):_ [tutorial URL](https://youtu.be/ke-UHDMMuAo?si=BAmvrNc6MBTwI5VM)
