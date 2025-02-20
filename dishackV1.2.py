@@ -20,7 +20,7 @@ def del_wh(wb):
         print("Resource successfully deleted!")
     elif res.status_code == 404:
         print("The discord webhook does not exist/no longer exists, error 404!")
-    if str(res.status_code)[0] == "5":
+    elif str(res.status_code)[0] == "5":
         print(f"Error with discord servers : {res.status_code} - {res.text}")
     else:
         print(f"Deletion failed : {res.status_code} - {res.text}")
