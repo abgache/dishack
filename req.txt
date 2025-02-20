@@ -1,1 +1,6 @@
-
+requests
+pyperclip
+pyautogui
+discord.py
+colorama
+selenium
