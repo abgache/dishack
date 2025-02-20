@@ -14,6 +14,17 @@ def lwr(channel_id, token, sec):
             print(f"Failed to send request. Status code: {response.status_code}")
         time.sleep(10)
             
+def del_wh(wb):
+    res = requests.delete(wb)
+    if str(res.status_code)[0] == "2":
+        print("Resource successfully deleted!")
+    elif res.status_code == 404:
+        print("The discord webhook does not exist/no longer exists, error 404!")
+    if str(res.status_code)[0] == "5":
+        print(f"Error with discord servers : {res.status_code} - {res.text}")
+    else:
+        print(f"Deletion failed : {res.status_code} - {res.text}")
+
 
 def get_pfp(bot_token, user_id):
     intents = discord.Intents.default()
@@ -124,9 +135,10 @@ def main(token_b):
     print("3- Get User pfp using the ID (BOT token)")
     print("4- Always typing in channel")
     print("5- Delete a message using the token")
-    print("6- Connect to an account using the token")
-    print("7- more infos")
-    print("8- Exit")
+    print("6- Delete a webhook (no token requested)")
+    print("7- Connect to an account using the token")
+    print("8- more infos")
+    print("9- Exit")
     action = input("Choose an option: ")
     if action == "1":
         msg_token()
@@ -148,12 +160,15 @@ def main(token_b):
         del_token()
         main(tokb)
     elif action == "6":
-        login_token()
+        del_wh(input("Webhook URL : "))
         main(tokb)
     elif action == "7":
-        infoa()
+        login_token()
         main(tokb)
     elif action == "8":
+        infoa()
+        main(tokb)
+    elif action == "9":
         exit()
     else:
         print("Invalid option. Please choose 1, 2, 3, 4, 5, 6 or 7.")
