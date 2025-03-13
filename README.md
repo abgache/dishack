@@ -1,4 +1,4 @@
-# Dishack V1.2
+# Dishack V1.3
 
 ## How to use dishack ?
 Just download this github repo, and launch "launcher.bat"
