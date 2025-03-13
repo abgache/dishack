@@ -3,6 +3,8 @@ from colorama import Fore
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
+Version = 1.3
+
 def lwr(channel_id, token, sec):
     url = f"https://discord.com/api/v9/channels/{channel_id}/typing"
     headers = {"Authorization": token}
@@ -25,7 +27,18 @@ def del_wh(wb):
     else:
         print(f"Deletion failed : {res.status_code} - {res.text}")
 
-
+def bot():
+    print("Wait for V1.5")
+def webhook(wb: list[str] = [], num: int = 100, msg: str="# ||@everyone|| Server got Nuked !"):
+    for e in range(num):
+        for i in range(len(wb)):
+            res = requests.post(wb[i], data={'content':msg})
+            if str(res.status_code[0]) == "2":
+                print(f"Message sent, Code {res.status_code}")
+            elif res.status_code == 429:
+                print(f"The resource is beeing rate limited !")
+            elif res.status_code == 404:
+                print(f"The {i} webhook does not exist !")
 def get_pfp(bot_token, user_id):
     intents = discord.Intents.default()
     client = discord.Client(intents=intents)
@@ -136,9 +149,10 @@ def main(token_b):
     print("4- Always typing in channel")
     print("5- Delete a message using the token")
     print("6- Delete a webhook (no token requested)")
-    print("7- Connect to an account using the token")
-    print("8- more infos")
-    print("9- Exit")
+    print("7- Webhook/Bot nuker")
+    print("8- Connect to an account using the token")
+    print("9- more infos")
+    print("10- Exit")
     action = input("Choose an option: ")
     if action == "1":
         msg_token()
@@ -163,12 +177,33 @@ def main(token_b):
         del_wh(input("Webhook URL : "))
         main(tokb)
     elif action == "7":
-        login_token()
+        """
+        print("1- Bot Nuker")
+        print("2- Webhook Nuker")
+        ac = int(input(">>> "))
+        if ac == 2:
+            msgm = str(input("What message do you want to spam?\n"))
+            numm = int(input("How many messages do you want to send?\n"))
+            print("Write all the webhooks you have (Leave blank when you don't have any more webhooks)")
+            ouf=[]
+            while True:
+                oufi=input(">>> ")
+                if oufi == "" or oufi == None:
+                    break
+                else:
+                    ouf+=oufi
+            webhook(wb=ouf, num=numm, msg=msgm)
+        elif ac == 1:
+            nuker().webhook()"""
+        print("Wait for V1.5")
         main(tokb)
     elif action == "8":
-        infoa()
+        login_token()
         main(tokb)
     elif action == "9":
+        infoa()
+        main(tokb)
+    elif action == "10":
         exit()
     else:
         print("Invalid option. Please choose 1, 2, 3, 4, 5, 6 or 7.")
