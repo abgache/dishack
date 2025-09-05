@@ -1,3 +1,5 @@
+> [!WARNING]
+> I am NOT responsible for any for your malicious or illegal usage of this software.
 # Dishack V1.3
 
 ## How to use dishack ?
