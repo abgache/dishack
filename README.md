@@ -1,6 +1,11 @@
-> [!WARNING]
-> I am NOT responsible for any for your malicious or illegal usage of this software.
 # Dishack V1.3
+
+--------------------
+
+# Disclaimer
+> Information and code provided on this repository are for educational purposes only. The creator is no way responsible for any direct or indirect damage caused due to the misusage of the information or code. Everything you do, you are doing at your own risk and responsibility.
+
+--------------------
 
 ## How to use dishack ?
 Just download this github repo, and launch "launcher.bat"
